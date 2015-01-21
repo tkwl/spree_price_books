@@ -1,0 +1,71 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/suchith/store1/spree_price_books/lib/spree_price_books.rb": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "/home/suchith/store1/spree_price_books/lib/spree_price_books/engine.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/suchith/store1/spree_price_books/app/models/spree/calculator/shipping/flat_multi_currency_rate.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1421428494
+  }
+}
