@@ -11,7 +11,7 @@ namespace :price_books do
     Money.default_bank = Money::Bank::GoogleCurrency.new
     Money::Currency.all.each do |currency|
       # Limit to only major currencies, which have priority below 100.
-      next if currency.priority >= 100
+      # next if currency.priority >= 0
       begin
         rate = Money.default_bank.get_rate(Spree::CurrencyRate.default.currency, currency.iso_code)
         if cr = Spree::CurrencyRate.find_or_create_by(base_currency: Spree::CurrencyRate.default.currency, currency: currency.iso_code, default: (Spree::Config[:currency] == currency.iso_code))
