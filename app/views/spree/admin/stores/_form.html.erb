@@ -66,7 +66,7 @@
           <label class="sub">
             <%= check_box_tag 'store[payment_method_ids][]', payment_method.id, @store.payment_methods.include?(payment_method) %>
           </label> &nbsp;
-          <%= "#{payment_method.name} (#{payment_method.environment})" %>
+          <%= payment_method.name %>
           <br>
         <% end %>
         <%= hidden_field_tag 'store[payment_method_ids][]', '' %>
@@ -88,34 +88,31 @@
     </div>
   </div>
 
-  <div class='row'>
-    <div class='alpha six columns'>
-      <h5><%= Spree::PriceBook.model_name.human(count: 2) %></h5>
-      <%= f.field_container :price_books do %>
-        <ul>
-          <%= f.collection_check_boxes :price_book_ids, Spree::PriceBook.all, :id, :name do |b| %>
-            <li>
-              <%= b.label { b.check_box + ' ' + b.text } %>
-            </li>
-            <br/>
-          <% end %>
-        </ul>
-      <% end %>
-      <small><%= Spree.t(:store_price_book_assignment_gotcha) %></small>
-    </div>
-    <div class="omega six columns">
-      <h5><%= Spree.t :price_book_priority %></h5>
-      <% unless @store.new_record? %>
-        <ol class='sortable' data-href="<%= spree.sort_admin_store_price_books_path(@store) %>">
-          <% @store.price_books.reorder('spree_store_price_books.priority ASC').each do |pb| %>
-            <li id='store_price_book_id_<%= pb.id %>'>
-              <span class="ui-icon ui-icon-arrowthick-2-n-s"></span> <%= pb.name %>
-            </li>
-          <% end %>
-        </ol>
-      <% end %>
-      <small><%= Spree.t(:store_price_book_priority_gotcha) %></small>
-    </div>
+  <div class='alpha six columns'>
+    <%= f.field_container :price_books do %>
+      <%= f.label :price_books, Spree::PriceBook.model_name.human(count: 2) %><br />
+      <ul>
+        <%= f.collection_check_boxes :price_book_ids, Spree::PriceBook.all, :id, :name do |b| %>
+          <li>
+            <%= b.label { b.check_box + ' ' + b.text } %>
+          </li>
+          <br/>
+        <% end %>
+      </ul>
+    <% end %>
+    <small><%= Spree.t(:store_price_book_assignment_gotcha) %></small>
   </div>
-
+  <div class="omega six columns">
+    <label><%= Spree.t :price_book_priority %></label>
+    <% unless @store.new_record? %>
+      <ol class='sortable' data-href="<%= spree.sort_admin_store_price_books_path(@store) %>">
+        <% @store.price_books.reorder('spree_store_price_books.priority ASC').each do |pb| %>
+          <li id='store_price_book_id_<%= pb.id %>'>
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span> <%= pb.name %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+    <small><%= Spree.t(:store_price_book_priority_gotcha) %></small>
+  </div>
 </div>
