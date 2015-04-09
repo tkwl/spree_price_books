@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_price_books'
-  s.version     = '2.3.0.beta'
+  s.version     = '3.0.0.beta'
   s.summary     = 'Price books allowing flexible product pricing.'
   s.description = s.summary
   s.required_ruby_version = '>= 2.0.0'

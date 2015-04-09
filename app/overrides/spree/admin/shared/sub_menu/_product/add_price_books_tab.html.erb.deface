@@ -1,0 +1,6 @@
+<!--
+insert_bottom "[data-hook='admin_product_sub_tabs'],#sidebar-product"
+-->
+<li class="sidebar-menu-item">
+<%= tab :price_books %>
+</li>

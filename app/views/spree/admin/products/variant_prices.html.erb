@@ -1,4 +1,4 @@
-<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<%#= render :partial => 'spree/admin/shared/product_sub_menu' %>
 <%= render :partial => 'spree/admin/shared/product_tabs', :locals => { :current => 'Prices' } %>
 
 <%# did we get her via redirect? %>
@@ -12,12 +12,8 @@
     <%= select_tag :price_book_id, options_for_select(@price_books.map {|pb| ["#{pb.name} (#{pb.currency})", pb.id]}, @current_price_book.id) %>
   </div>
 
-  <table class="index">
-    <colgroup>
-      <col style="width: 70%" />
-      <col style="width: 15%" />
-      <col style="width: 15%" />
-    </colgroup>
+  <table class="index table">
+    
     <thead data-hook="variants_header">
       <tr>
         <th><%= Spree.t(:variant) %></th>

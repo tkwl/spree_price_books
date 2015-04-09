@@ -1,4 +1,4 @@
-<%= render 'spree/admin/shared/configuration_menu' %>
+<%#= render 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
   <%= Spree.t(:currency_rates) %>
@@ -6,21 +6,12 @@
 
 <% content_for :page_actions do %>
   <% if can? :create, Spree::CurrencyRate %>
-    <li>
       <%= button_link_to Spree.t(:new_currency_rate), new_object_url, icon: 'plus' %>
-    </li>
     <% end %>
 <% end %>
 
 <% if @currency_rates.any? %>
-  <table class="index">
-    <colgroup>
-      <col style="width: 25%">
-      <col style="width: 25%">
-      <col style="width: 25%">
-      <col style="width: 10%">
-      <col style="width: 15%">
-    </colgroup>
+  <table class="table">
     <thead>
       <tr data-hook="rate_header">
         <th><%= Spree.t(:base_currency) %></th>

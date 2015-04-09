@@ -1,20 +1,20 @@
-<div data-hook="admin_currency_rate_form_fields">
-  <div class="alpha twelve columns">
+<div data-hook="admin_currency_rate_form_fields" class='row'>
+  <div class="col-md-12">
     <fieldset data-hook="currency_rates" class=" no-border-bottom">
-      <legend align="center"><%= Spree.t(:settings) %></legend>
+      <legend align=""><%= Spree.t(:settings) %></legend>
 
-      <div class="alpha six columns">
+      <div class="col-sm-6">
         <div data-hook="base_currency" class="field">
           <%= f.label :base_currency %>
-          <%= f.text_field :base_currency, class: 'fullwidth' %>
+          <%= f.text_field :base_currency, class: 'form-control' %>
         </div>
         <div data-hook="currency" class="field">
           <%= f.label :currency, Spree.t(:currency) %>
-          <%= f.text_field :currency, class: 'fullwidth' %>
+          <%= f.text_field :currency, class: 'form-control' %>
         </div>
         <div data-hook="exchange_rate" class="field">
           <%= f.label :exchange_rate, Spree.t(:exchange_rate) %>
-          <%= f.text_field :exchange_rate, :class => 'fullwidth' %>
+          <%= f.text_field :exchange_rate, :class => 'form-control' %>
           <br/><span class="info"><%= Spree.t(:currency_rate_explanation) %></span>
         </div>
         <% if f.object.default? || Spree::CurrencyRate.default.new_record? %>
